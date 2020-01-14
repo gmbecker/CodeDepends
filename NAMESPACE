@@ -1,7 +1,14 @@
+#import(graph)
+import(graphics)
+importClassFrom(graph, graphNEL)
+importMethodsFrom(graph, plot)
+importFrom(graph, nodes, nodeData, "nodeData<-", "nodeDataDefaults<-")
 import(XML)
 import(codetools)
 import(methods)
-importFrom(utils, find)
+importFrom(utils, find, head)
+
+
 
                                         # getVariableInputs
 export(getVariableDepends, getPropagateChanges)
@@ -51,7 +58,8 @@ exportMethods(makeCallGraph)
 export(separateExpressionBlocks,
        splitRedefinitions)
 
-# For Developers
+
+## For Developers
 # export(parseFrags, inputCollector)
 
 exportMethods("[", "$")
@@ -60,3 +68,9 @@ export(updatingScript)
 export(historyAsScript)
 
 export(highlightCode)
+export(defaultFuncHandlers)
+export(asVarName)
+
+exportPattern("^[^.]+handler(factory){0,1}$")
+export(nseafterfirst)
+
